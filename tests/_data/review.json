@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "text": {
+            "type": "string"
+        },
+        "score": {
+            "type": "integer"
+        },
+        "updated_at": {
+            "type": "string"
+        },
+        "created_at": {
+            "type": "string"
+        },
+        "id": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "name",
+        "text",
+        "score",
+        "updated_at",
+        "created_at",
+        "id"
+    ]
+}
