@@ -18,6 +18,13 @@ Those 3 steps are related to initial development environment setup. After that y
 docker-compose run --rm --no-deps phpfpm composer phpunit
 ```
 
+### Integration
+
+##### API test suite
+```bash
+docker-compose run --rm --no-deps phpfpm composer codecept api
+```
+
 
 ## Clean all project including MySQL data
 1. Run `make down` command which will execute `docker-compose down` command for you.
