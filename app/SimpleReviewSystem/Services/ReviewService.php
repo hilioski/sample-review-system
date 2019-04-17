@@ -71,11 +71,11 @@ class ReviewService
     public function delete(int $reviewId): bool
     {
         try {
-            $review = $this->reviewRepository->delete($reviewId);
+            $status = $this->reviewRepository->delete($reviewId);
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
 
-        return $review;
+        return $status;
     }
 }
