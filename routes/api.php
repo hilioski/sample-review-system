@@ -13,6 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/**
+ * @var \Illuminate\Routing\Router $router
+ **/
+
+$router->middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+// Review Resource Controller Routes
+$router->group([ 'prefix' => 'reviews', 'middleware' => [ 'jsonify' ], 'namespace' => 'API' ], function () use ($router) {
+    $router->get('', 'ReviewController@index');
+    $router->post('', 'ReviewController@store');
+    $router->delete('{reviewId}', 'ReviewController@destroy');
 });
