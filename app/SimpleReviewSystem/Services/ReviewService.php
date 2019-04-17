@@ -32,7 +32,7 @@ class ReviewService
      */
     public function getAll(): LengthAwarePaginator
     {
-        return $this->reviewRepository->paginate();
+        return $this->reviewRepository->orderBy('created_at', 'DESC')->paginate();
     }
 
 

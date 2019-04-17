@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/**
+ * @var \Illuminate\Routing\Router $router
+ **/
+
+$router->get('/', 'ReviewController@index');
