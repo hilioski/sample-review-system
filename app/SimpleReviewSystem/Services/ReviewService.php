@@ -2,6 +2,7 @@
 
 namespace SimpleReviewSystem\Services;
 
+use App\Criteria\ReviewSearchCriteria;
 use App\Models\Review;
 use Illuminate\Pagination\LengthAwarePaginator;
 use SimpleReviewSystem\Repositories\ReviewRepository;
@@ -30,8 +31,11 @@ class ReviewService
     /**
      * Return all reviews.
      */
-    public function getAll(): LengthAwarePaginator
+    public function getAll($keyword = ''): LengthAwarePaginator
     {
+        if($keyword != ''){
+            $this->reviewRepository->pushCriteria(new ReviewSearchCriteria($keyword));
+        }
         return $this->reviewRepository->orderBy('created_at', 'DESC')->paginate();
     }
 

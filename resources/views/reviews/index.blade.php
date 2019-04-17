@@ -66,6 +66,8 @@
                             <button type="button" id="submit_review" class="btn btn-info pull-right">Submit review</button>
                             <div class="clearfix"></div>
                             <hr>
+                                <input class="form-control" id="keyword" type="text" placeholder="Search keyword ... (min 3 char)"> <br>
+                            <hr>
                             <ul class="media-list" id="review_list">
                             </ul>
                             <div class="text-center">

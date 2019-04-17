@@ -32,10 +32,16 @@ class ReviewController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
+     *
      * @return ResponseFactory
      */
-    public function index()
+    public function index(Request $request)
     {
+        if($request->has('keyword')){
+            return response($this->reviewService->getAll($request->keyword));
+        }
+
         return response($this->reviewService->getAll());
     }
 
